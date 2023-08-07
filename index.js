@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(appointment => console.log(appointment))
     }
 
-  
+
     // Manipulate our buttons with display none and display block since we are designing a single page application
 
     const myDoctors = document.querySelector("#doctors")
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
         appointments.classList.add("invisible")
         blogNews.classList.add("invisible")
         myDoctors.classList.remove("invisible")
-        
+
 
 
 
@@ -142,11 +142,60 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // Patch and Delete 
+    //search function to search for doctor by name or specialization
+
+    document.getElementById("search-bar-form").addEventListener('submit', (e) => {
+        // console.log("Search form submitted");
+        e.preventDefault();
+        let searchedWord = document.getElementById("search-doctor").value;
+        console.log(`Searched word: ${searchedWord}`);
+        if (searchedWord) {
+            displaySearchedDoctor(`${baseUrl}/doctors`, searchedWord)
+        }
+    });
+
+
+    function displaySearchedDoctor(linkUrl, searchWord) {
+        fetch(linkUrl)
+            .then((res) => res.json())
+            .then((doctorData) => {
+
+                let doctorsThatMatchSearch = [];
+                let modifiedsearchWord = searchWord.toLowerCase();
+
+                doctorData.forEach(doc => {
+                    if (doc.name.toLowerCase().includes(modifiedsearchWord) || doc.specialization.toLowerCase().includes(modifiedsearchWord)) {
+                        doctorsThatMatchSearch.push(doc.id);
+                    }
+                });
+
+                // console.log(doctorsThatMatchSearch);
+                doctorCards.replaceChildren();
+                doctorData.map((data) => {
+
+                    if (doctorsThatMatchSearch.includes(data.id)) {
+                        const cards = document.createElement("div");
+                        cards.className = "doctor-profiles"
+                        cards.innerHTML = `<img src="${data.image}"> <h4>${data.name}</h4> 
+                        <p>${data.specialization}<br> Appointments: ${data.appointments}</p>`;
+
+
+                        doctorCards.appendChild(cards)
+
+                    }
+
+
+
+
+                });
+
+            })
+        console.log("connection made");
+
+    }
 
 
 });
 
 
 
-    
