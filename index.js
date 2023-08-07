@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <li> Date: ${data.date}<br> 
                     Time: ${data.time}</li>
                     <button class="edit-button">Edit</button>
-        <button class="delete-button">Delete</button>`;
+                     <button class="delete-button">Delete</button>`;
                     bookedAppointments.appendChild(list)
                 });
 
@@ -101,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(appointment => console.log(appointment))
     }
 
+  
     // Manipulate our buttons with display none and display block since we are designing a single page application
 
     const myDoctors = document.querySelector("#doctors")
@@ -110,12 +111,13 @@ document.addEventListener("DOMContentLoaded", function () {
         appointments.classList.add("invisible")
         blogNews.classList.add("invisible")
         myDoctors.classList.remove("invisible")
-        //myDoctors.classList.add("visible")
+        
 
 
 
 
     });
+
 
     const appointments = document.querySelector(".appointments")
     const appointmentBtn = document.querySelector("#Appointmentsbutton")
@@ -140,5 +142,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+    // Patch and Delete 
+
+
 });
 
+
+
+    
