@@ -18,32 +18,41 @@
 
 .mainbuttons {
     text-align: center;
+
     padding-top: 20px;
     padding-bottom: 20px;
+
     word-spacing: 100px;
 
 }
 
 .searchbar {
     width: 100%;
+
     padding-bottom: 20px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     box-shadow: 4px 4px 30px pink;
 }
 
 .Form1 {
     background: white;
+
     width: 600px;
     height: 60px;
+
     display: flex;
 }
 
 .Form1 input {
     flex: 1;
+
     border-color: azure;
     outline: none;
+
     padding-left: 30px;
 
 
@@ -52,11 +61,15 @@
 .Form1 button {
 
     border-color: azure;
-    outline: none;
+
     background: pink;
     color: white;
+
+    outline: none;
+
     letter-spacing: 1px;
     font-weight: bold;
+
     cursor: pointer;
 
 
@@ -64,11 +77,16 @@
 
 .fa-magnifying-glass {
     align-self: center;
-    color: pink;
-    padding: 0px;
+
     position: absolute;
     flex: 1;
+
+    color: pink;
+
+    padding: 0px;
+
     margin-left: 10px;
+
     font-size: small;
 
 
@@ -81,11 +99,17 @@
 
     font-weight: bold;
     font-size: 15px;
+
     background-color: pink;
+
     width: 180px;
+
     border-radius: 5px;
+
     padding: 5px;
+
     text-transform: uppercase;
+
     cursor: pointer;
 
 
@@ -94,18 +118,22 @@
 #Doctorcards {
     height: auto;
     width: auto;
+
     display: flex;
     flex-wrap: wrap;
+
     margin-left: 60px;
-    
+
 }
 
 #Doctorcards div {
 
     border: 2px solid lightgray;
+    background-color: white;
+
     margin-right: 20px;
     margin-bottom: 20px;
-    background-color: white;
+    
     flex: 1;
     flex-wrap: wrap;
 
@@ -114,7 +142,9 @@
 #Doctorcards img {
     height: 350px;
     width: 450px;
+
     background-color: white;
+
     margin-right: 20px;
 
 }
@@ -122,17 +152,25 @@
 #Doctorcards p {
 
     background-color: white;
-    padding: 2px;
+
     color: maroon;
-    font-size: 14px
+
+    padding: 2px;
+    
+    font-size: 14px;
+
+    line-height: 25px;
 }
 
 #Doctorcards button {
 
     background-color: white;
     color: maroon;
+
     padding: 2px;
+
     border: none;
+
     cursor: pointer;
 
 }
@@ -140,8 +178,11 @@
 #Doctorcards h4 {
 
     background-color: white;
+
     color: maroon;
+
     padding: 2px;
+
     border: none;
 
 
@@ -149,6 +190,7 @@
 
 #list-of-appointments div {
     text-decoration: none;
+    
     width: 600px;
     height: 150px;
 
@@ -156,17 +198,42 @@
     border-color: pink;
     border-radius: 5px;
 
-    margin: 5px;
+    color: maroon;
+
+    margin: 3px;
 
 
 
 }
 
+.form-field {
+    height: 130px;
+    width: 600px;
 
+    padding: 3px;
+
+    border: none 2px;
+    
+    
+
+
+}
+.form-field input{
+    height: 30px;
+    width: 600px;
+
+    padding: 3px;
+
+    border: solid 1px;
+    border-color: lightgray;
+    
+
+
+}
 .salutation {
 
     width: 600px;
-    height: 80px;
+    height: 60px;
 
     padding-left: 5px;
 
@@ -183,7 +250,7 @@
 
 
 
-    margin: 5px;
+    margin: 3px;
 
 
 
@@ -192,17 +259,14 @@
 
 #list-of-appointments h4 {
 
-    margin: 5px;
+    margin: 3px;
 
     font-size: larger;
-
-    color: maroon;
-
-
-
+    
 }
 
 #list-of-appointments li {
+    text-decoration: none;
 
     margin-left: 5px;
 

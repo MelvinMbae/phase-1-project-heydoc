@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Accessing the button and submitting the form in the text field when booking appointment
 
-    document.getElementById('appointmnent form').addEventListener('submit', function (e) {
+    document.getElementById('appointmnent-form').addEventListener('submit', function (e) {
         e.preventDefault()
         let newAppointment = document.getElementById("doctorname")
         let doctorName = newAppointment.value;
@@ -136,26 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    // function postRequest(linkUrl) {
-    //     fetch(linkUrl, {
-    //         method: 'PATCH',
-    //         body: JSON.stringify({
-    //             id: 6,
-    //             time: "12:00 pm - 1:00pm",
-    //             specialization: "Psychologist",
-    //             
-
-    //         }),
-    //         headers: {
-    //             'Content-Type': 'application/json; charset=UTF-8'
-    //         },
-
-    //     })
-    //         .then((res) => res.json())
-    //         .then((json) => console.log(json));
-
-    // }
-    // postRequest(`${baseUrl}/appointments`);
 
 });
 
