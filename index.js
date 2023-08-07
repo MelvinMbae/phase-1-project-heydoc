@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     const cards = document.createElement("div");
                     cards.className = "doctor-profiles"
                     cards.innerHTML = `<img src="${data.image}"> <h4>${data.name}</h4> 
-                    <p>${data.specialization}<br> Appointments: ${data.appointments}</p>`;                   
-                    
+                    <p>${data.specialization}<br> Appointments: ${data.appointments}</p>`;
+
 
                     doctorCards.appendChild(cards)
 
@@ -57,6 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById('appointmnent-form').addEventListener('submit', function (e) {
         e.preventDefault()
+
+        // fetch the values from the input fields and store them in a variable
         let newAppointment = document.getElementById("doctorname")
         let doctorName = newAppointment.value;
         console.log(doctorName)
@@ -68,6 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
         let newAppointmentTime = document.getElementById("appointment-time")
         let appointmentTime = newAppointmentTime.value;
         console.log(appointmentTime)
+
+        // creating an object to be posted in JSON format to our server
 
         let newAppointmentData = {
 
@@ -83,22 +87,17 @@ document.addEventListener("DOMContentLoaded", function () {
     //Post request to server. Booking a new appointment and making it persistent.
     function postRequest(newAppointmentData) {
         fetch(`${baseUrl}/appointments`, {
+            // Specify the HTTP method
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
+            // convert the object from the input field and convert to JSON
             body: JSON.stringify(newAppointmentData)
         })
             .then(res => res.json())
             .then(appointment => console.log(appointment))
     }
-
-
-
-
-
-
-
 
     // Manipulate our buttons with display none and display block since we are designing a single page application
 
