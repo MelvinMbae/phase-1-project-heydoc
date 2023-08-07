@@ -45,7 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     const list = document.createElement("div");
                     list.innerHTML = ` <h4> Doctor: ${data.doctor}</h4>
                     <li> Date: ${data.date}<br> 
-                    Time: ${data.time}</li>`;
+                    Time: ${data.time}</li>
+                    <button class="edit-button">Edit</button>
+        <button class="delete-button">Delete</button>`;
                     bookedAppointments.appendChild(list)
                 });
 
