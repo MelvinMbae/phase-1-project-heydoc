@@ -16,6 +16,17 @@
     width: 100%;
 }
 
+header {
+    background-color: #fff9ff;;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+h1 {
+    background-color: #fff9ff;
+    
+}
+
 .mainbuttons {
     text-align: center;
 
