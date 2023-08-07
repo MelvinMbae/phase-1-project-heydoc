@@ -1,0 +1,139 @@
+{
+  "doctors": [
+    {
+      "id": 1,
+      "name": "Simon Kimemia",
+      "specialization": "Oncologist",
+      "image": "https://png.pngtree.com/png-clipart/20220911/original/pngtree-male-doctor-avatar-icon-illustration-png-image_8537702.png",
+      "appointments": 2
+    },
+    {
+      "id": 2,
+      "name": "Mark Gikungu",
+      "specialization": "Dentist",
+      "image": "https://png.pngtree.com/png-clipart/20220911/original/pngtree-male-doctor-avatar-icon-illustration-png-image_8537702.png",
+      "appointments": 1
+    },
+    {
+      "id": 3,
+      "name": "Patrick Mugo",
+      "specialization": "Psychologist",
+      "image": "https://png.pngtree.com/png-clipart/20220911/original/pngtree-male-doctor-avatar-icon-illustration-png-image_8537702.png",
+      "appointments": 3
+    },
+    {
+      "id": 4,
+      "name": "Maureen Mukami",
+      "specialization": "Neurologist",
+      "image": "https://png.pngtree.com/png-clipart/20220911/original/pngtree-male-doctor-avatar-icon-illustration-png-image_8537702.png",
+      "appointments": 2
+    },
+    {
+      "id": 5,
+      "name": "Evelyne Kaose",
+      "specialization": "Dentist",
+      "image": "https://png.pngtree.com/png-clipart/20220911/original/pngtree-male-doctor-avatar-icon-illustration-png-image_8537702.png",
+      "appointments": 5
+    },
+    {
+      "id": 6,
+      "name": "Trevour Kitavi",
+      "specialization": "Neurologist",
+      "image": "https://png.pngtree.com/png-clipart/20220911/original/pngtree-male-doctor-avatar-icon-illustration-png-image_8537702.png",
+      "appointments": 5
+    },
+    {
+      "id": 7,
+      "name": "Chris Muga",
+      "specialization": "Pediatrician",
+      "image": "https://png.pngtree.com/png-clipart/20220911/original/pngtree-male-doctor-avatar-icon-illustration-png-image_8537702.png",
+      "appointments": 5
+    },
+    {
+      "id": 8,
+      "name": "Ruth Wanjiru",
+      "specialization": "Radiologist",
+      "image": "https://png.pngtree.com/png-clipart/20220911/original/pngtree-male-doctor-avatar-icon-illustration-png-image_8537702.png",
+      "appointments": 6
+    },
+    {
+      "id": 9,
+      "name": "Skylar Kendi",
+      "specialization": "Opthamologist",
+      "image": "https://png.pngtree.com/png-clipart/20220911/original/pngtree-male-doctor-avatar-icon-illustration-png-image_8537702.png",
+      "appointments": 2
+    },
+    {
+      "id": 10,
+      "name": "Jayson Mbae",
+      "specialization": "Hematologists",
+      "image": "https://png.pngtree.com/png-clipart/20220911/original/pngtree-male-doctor-avatar-icon-illustration-png-image_8537702.png",
+      "appointments": 3
+    },
+    {
+      "id": 11,
+      "name": "Dennis Mwangi",
+      "specialization": "Sports Medicine Specialist",
+      "image": "https://png.pngtree.com/png-clipart/20220911/original/pngtree-male-doctor-avatar-icon-illustration-png-image_8537702.png",
+      "appointments": 3
+    },
+    {
+      "id": 12,
+      "name": "Millicent Njeri",
+      "specialization": "Psychologist",
+      "image": "https://png.pngtree.com/png-clipart/20220911/original/pngtree-male-doctor-avatar-icon-illustration-png-image_8537702.png",
+      "appointments": 3
+    },
+    {
+      "id": 13,
+      "name": "Sophie Said",
+      "specialization": "Sports Medicine Specialist",
+      "image": "https://png.pngtree.com/png-clipart/20220911/original/pngtree-male-doctor-avatar-icon-illustration-png-image_8537702.png",
+      "appointments": 3
+    },
+    {
+      "id": 14,
+      "name": "Tania Goez",
+      "specialization": "General Surgeon",
+      "image": "https://png.pngtree.com/png-clipart/20220911/original/pngtree-male-doctor-avatar-icon-illustration-png-image_8537702.png",
+      "appointments": 3
+    },
+    {
+      "id": 15,
+      "name": "Alvin Kiilu",
+      "specialization": "Urologists",
+      "image": "https://png.pngtree.com/png-clipart/20220911/original/pngtree-male-doctor-avatar-icon-illustration-png-image_8537702.png",
+      "appointments": 3
+    },
+    {
+      "id": 16,
+      "name": "Amaria Hassan",
+      "specialization": "General Practitioner",
+      "image": "https://png.pngtree.com/png-clipart/20220911/original/pngtree-male-doctor-avatar-icon-illustration-png-image_8537702.png",
+      "appointments": 3
+    }
+  ],
+  "appointments": [
+    {
+      "id": 6,
+      "doctor": "Trevour Kitavi",
+      "patient": "Melvin Mbae",
+      "date": "10th August 2023",
+      "time": "9:30 am - 10:30 am"
+    },
+    {
+      "id": 9,
+      "doctor": "Skylar Kendi",
+      "patient": "Melvin Mbae",
+      "date": "14th August 2023",
+      "time": "12:00 pm - 1:00pm"
+    },
+    {
+      "doctor": "Mark Mutugi",
+      "patient": "Melvin Mbae",
+      "date": "10th August 2023",
+      "time": "9:30 am - 10:30 am",
+      "id": 10
+    }
+  ]
+}

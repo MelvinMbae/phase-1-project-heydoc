@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HeyDoc!</title>
+		<link rel="stylesheet" href="style.css" />
+		<script
+			src="https://kit.fontawesome.com/640028239d.js"
+			crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="homepage">
+			<img
+				id="MainImage"
+				src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+				alt="Image of doctor holding a phone" />
+
+			<p class="mainbuttons">
+				<button id="Doctorbutton" type="button">Doctors</button>
+				<button id="Appointmentsbutton" type="button">Appointments</button>
+				<button id="Healthnuggetsbutton" type="button">Health Nuggets</button>
+			</p>
+			<div id="doctors">
+				<div class="searchbar">
+					<form class="Form1">
+						<i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+						<input type="text" placeholder="search for a doctor" />
+						<button type="submit">Search</button>
+					</form>
+				</div>
+				<div id="Doctorcards"></div>
+			</div>
+			<div class="appointments invisible">
+				<form id="appointmnent form">
+					<div class="form-field">
+						<input id="doctorname"type="text" placeholder="doctor" /><br>
+						<input id="appointment-date"type="text" placeholder="date" /><br>
+						<input id="appointment-time"type="text" placeholder="time" /><br>
+						<input type="submit" class="btn" value = "Submit">
+					</div>
+				</form>
+				<div class="salutation">
+					Hello, Melvin Mbae.<br />
+					You have two upcoming appointments
+				</div>
+
+				<ul id="list-of-appointments"></ul>
+			</div>
+			<div class="healthNuggets invisible">
+				<h2>
+					Good Morning,<br />
+					Melvin Mbae.
+				</h2>
+				<ul id="list-of-appointments">
+					<h3>List of Appointments Booked</h3>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="index.js"></script>
+</html>

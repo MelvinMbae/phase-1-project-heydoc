@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #fff9ff;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, 'serif';
+
+
+}
+
+#MainImage {
+    height: 100%;
+    width: 100%;
+}
+
+.mainbuttons {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    word-spacing: 100px;
+
+}
+
+.searchbar {
+    width: 100%;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Form1 {
+    background: white;
+    width: 600px;
+    height: 60px;
+    display: flex;
+}
+
+.Form1 input {
+    flex: 1;
+    border-color: azure;
+    outline: none;
+    padding-left: 30px;
+
+
+}
+
+.Form1 button {
+
+    border-color: azure;
+    outline: none;
+    background: pink;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: bold;
+    cursor: pointer;
+
+
+}
+
+.fa-magnifying-glass {
+    align-self: center;
+    color: pink;
+    padding: 0px;
+    position: absolute;
+    flex: 1;
+    margin-left: 10px;
+    font-size: small;
+
+
+
+}
+
+#Doctorbutton,
+#Appointmentsbutton,
+#Healthnuggetsbutton {
+
+    font-weight: bold;
+    font-size: 15px;
+    background-color: pink;
+    width: 180px;
+    border-radius: 5px;
+    padding: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+
+}
+
+#Doctorcards {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 60px;
+
+
+
+}
+
+#Doctorcards div {
+
+    border: 2px solid lightgray;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    flex: 1;
+    flex-wrap: wrap;
+
+}
+
+#Doctorcards img {
+    height: 350px;
+    width: 450px;
+    background-color: white;
+    margin-right: 20px;
+
+}
+
+#Doctorcards p {
+
+    background-color: white;
+    padding: 2px;
+    color: maroon;
+    font-size: 14px
+}
+
+#Doctorcards button {
+
+    background-color: white;
+    color: maroon;
+    padding: 2px;
+    border: none;
+    cursor: pointer;
+
+}
+
+#Doctorcards h4 {
+
+    background-color: white;
+    color: maroon;
+    padding: 2px;
+    border: none;
+
+
+}
+
+#list-of-appointments div {
+    text-decoration: none;
+    width: 600px;
+    height: 150px;
+
+    border: 2px solid;
+    border-color: pink;
+    border-radius: 5px;
+
+    margin: 5px;
+
+
+
+}
+
+
+.salutation {
+
+    width: 600px;
+    height: 80px;
+
+    padding-left: 5px;
+
+
+    background-color: pink;
+    color: maroon;
+
+    border-radius: 5px;
+
+    line-height: 30px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+
+
+    margin: 5px;
+
+
+
+
+}
+
+#list-of-appointments h4 {
+
+    margin: 5px;
+
+    font-size: larger;
+
+    color: maroon;
+
+
+
+}
+
+#list-of-appointments li {
+
+    margin-left: 5px;
+
+    line-height: 25px;
+
+    font-size: 14px;
+
+}
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
