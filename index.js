@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     fetchAppointments(`${baseUrl}/appointments`);
 
-    //Accessing the button and submitting the form in the text field when booking appointment
+    //Accessing the submit appointment button and submitting the form in the text field when booking appointment
 
     document.getElementById('appointmnent-form').addEventListener('submit', function (e) {
         e.preventDefault()
@@ -79,6 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         postRequest(newAppointmentData)
     })
+
+    //Post request to server. Booking a new appointment and making it persistent.
     function postRequest(newAppointmentData) {
         fetch(`${baseUrl}/appointments`, {
             method: 'POST',
