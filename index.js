@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const cards = document.createElement("div");
                     cards.className = "doctor-profiles"
                     cards.innerHTML = `<img src="${data.image}"> <h4>${data.name}</h4> 
-                    <p>${data.specialization}</p> 
+                    <p>${data.specialization}<br> Appointments: ${data.appointments}</p> 
                     
                     <button type= "submit" >Book Appointment`;
 
