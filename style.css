@@ -297,30 +297,6 @@ h1 {
 
 }
 
-.edit-button,
-.delete-button {
-    background-color: pink;
-    width: 115px;
-    color: white;
-    border-radius: 5px;
-    border: none;
-    padding: 5px 10px;
-    margin-top: 30px;
-    margin-left: 3px;
-    margin-right: 5px;
-    cursor: pointer;
-}
-
-.edit-button:hover,
-.delete-button:hover {
-    background-color: maroon;
-}
-
-.edit-button:focus,
-.delete-button:focus {
-    outline: none;
-}
-
 .blog1 {
     padding: 50px;
     width: 80%;

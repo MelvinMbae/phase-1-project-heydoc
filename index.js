@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Identify the baseURL
     const baseUrl = "http://localhost:3000";
 
+
     // Access the elements of our Html
     const doctorCards = document.getElementById("Doctorcards")
 
@@ -34,6 +35,57 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     fetchDoctorDetails(`${baseUrl}/doctors`);
 
+
+    //search function to search for doctor by name or specialization
+
+    document.getElementById("search-bar-form").addEventListener('submit', (e) => {
+        // console.log("Search form submitted");
+        e.preventDefault();
+        let searchedWord = document.getElementById("search-doctor").value;
+        console.log(`Searched word: ${searchedWord}`);
+        if (searchedWord) {
+            displaySearchedDoctor(`${baseUrl}/doctors`, searchedWord)
+        }
+    });
+
+
+    function displaySearchedDoctor(linkUrl, searchWord) {
+        fetch(linkUrl)
+            .then((res) => res.json())
+            .then((doctorData) => {
+
+                let doctorsThatMatchSearch = [];
+                let modifiedsearchWord = searchWord.toLowerCase();
+
+                doctorData.forEach(doc => {
+                    if (doc.name.toLowerCase().includes(modifiedsearchWord) || doc.specialization.toLowerCase().includes(modifiedsearchWord)) {
+                        doctorsThatMatchSearch.push(doc.id);
+                    }
+                });
+
+                // console.log(doctorsThatMatchSearch);
+                doctorCards.replaceChildren();
+                doctorData.map((data) => {
+
+                    if (doctorsThatMatchSearch.includes(data.id)) {
+                        const cards = document.createElement("div");
+                        cards.className = "doctor-profiles"
+                        cards.innerHTML = `<img src="${data.image}"> <h4>${data.name}</h4> 
+                        <p>${data.specialization}<br> Appointments: ${data.appointments}</p>`;
+
+
+                        doctorCards.appendChild(cards)
+
+                    };
+
+
+                });
+
+            });
+
+    };
+
+
     // Fetch processed appointment details to display on user end under the appointment page
 
     const bookedAppointments = document.getElementById("list-of-appointments");
@@ -45,15 +97,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     const list = document.createElement("div");
                     list.innerHTML = ` <h4> Doctor: ${data.doctor}</h4>
                     <li> Date: ${data.date}<br> 
-                    Time: ${data.time}</li>
-                    <button class="edit-button">Edit</button>
-                     <button class="delete-button">Delete</button>`;
+                    Time: ${data.time}</li>`;
                     bookedAppointments.appendChild(list)
                 });
 
             });
     }
     fetchAppointments(`${baseUrl}/appointments`);
+
 
     //Accessing the submit appointment button and submitting the form in the text field when booking appointment
 
@@ -73,6 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let appointmentTime = newAppointmentTime.value;
         console.log(appointmentTime)
 
+
         // creating an object to be posted in JSON format to our server
 
         let newAppointmentData = {
@@ -85,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         postRequest(newAppointmentData)
     })
+
 
     //Post request to server. Booking a new appointment and making it persistent.
     function postRequest(newAppointmentData) {
@@ -140,60 +193,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     });
-
-
-    //search function to search for doctor by name or specialization
-
-    document.getElementById("search-bar-form").addEventListener('submit', (e) => {
-        // console.log("Search form submitted");
-        e.preventDefault();
-        let searchedWord = document.getElementById("search-doctor").value;
-        console.log(`Searched word: ${searchedWord}`);
-        if (searchedWord) {
-            displaySearchedDoctor(`${baseUrl}/doctors`, searchedWord)
-        }
-    });
-
-
-    function displaySearchedDoctor(linkUrl, searchWord) {
-        fetch(linkUrl)
-            .then((res) => res.json())
-            .then((doctorData) => {
-
-                let doctorsThatMatchSearch = [];
-                let modifiedsearchWord = searchWord.toLowerCase();
-
-                doctorData.forEach(doc => {
-                    if (doc.name.toLowerCase().includes(modifiedsearchWord) || doc.specialization.toLowerCase().includes(modifiedsearchWord)) {
-                        doctorsThatMatchSearch.push(doc.id);
-                    }
-                });
-
-                // console.log(doctorsThatMatchSearch);
-                doctorCards.replaceChildren();
-                doctorData.map((data) => {
-
-                    if (doctorsThatMatchSearch.includes(data.id)) {
-                        const cards = document.createElement("div");
-                        cards.className = "doctor-profiles"
-                        cards.innerHTML = `<img src="${data.image}"> <h4>${data.name}</h4> 
-                        <p>${data.specialization}<br> Appointments: ${data.appointments}</p>`;
-
-
-                        doctorCards.appendChild(cards)
-
-                    }
-
-
-
-
-                });
-
-            })
-        console.log("connection made");
-
-    }
-
 
 });
 
