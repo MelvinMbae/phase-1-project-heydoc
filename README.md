@@ -51,4 +51,4 @@ The Health Nuggets Page displays health blogs posted by the Doctors/Users to sha
 
 # LinkUrl to Video recording
 
-[]
+[https://drive.google.com/file/d/1bQaf-94q_pWQuGqX7yiI80r8xUBUsRfj/view]
