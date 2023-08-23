@@ -1,123 +1,126 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>HeyDoc!</title>
-		<link rel="stylesheet" href="style.css" />
-		<!-- import icon from font awesome -->
-		<script
-			src="https://kit.fontawesome.com/640028239d.js"
-			crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	</head>
-	<body>
-		<header>
-			<h1>HEYDOC!</h1>
-		</header>
-		<div class="homepage">
-			<img
-				id="MainImage"
-				src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-				alt="Image of doctor holding a phone" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HeyDoc!</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- import icon from font awesome -->
+    <script
+      src="https://kit.fontawesome.com/640028239d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <header>
+      <h1>HEYDOC!</h1>
+    </header>
+    <div class="homepage">
+      <img
+        id="MainImage"
+        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+        alt="Image of doctor holding a phone"
+      />
 
-			<!-- Navigation buttons to be manipulated using display block and display none -->
+      <!-- Navigation buttons to be manipulated using display block and display none -->
 
-			<p class="mainbuttons">
-				<!-- Used to access the doctors page -->
-				<button id="Doctorbutton" type="button">Doctors</button>
+      <p class="mainbuttons">
+        <!-- Used to access the doctors page -->
+        <button id="Doctorbutton" type="button">Doctors</button>
 
-				<!-- Used to access the appointments page -->
-				<button id="Appointmentsbutton" type="button">Appointments</button>
+        <!-- Used to access the appointments page -->
+        <button id="Appointmentsbutton" type="button">Appointments</button>
 
-				<!-- Used to access the health nuggets page -->
-				<button id="Healthnuggetsbutton" type="button">Health Nuggets</button>
-			</p>
-			<!-- First Section Displaying the Search bar and Doctor Cards, -->
-			<div id="doctors">
-				<div class="searchbar" id="search-bar-form">
-					<form class="Form1">
-						<i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-						<input
-							id="search-doctor"
-							type="text"
-							name=""
-							placeholder="search for a doctor" />
-						<button type="submit">Search</button>
-					</form>
-				</div>
-				<div id="Doctorcards"></div>
-			</div>
+        <!-- Used to access the health nuggets page -->
+        <button id="Healthnuggetsbutton" type="button">Health Nuggets</button>
+      </p>
+      <!-- First Section Displaying the Search bar and Doctor Cards, -->
+      <div id="doctors">
+        <div class="searchbar" id="search-bar-form">
+          <form class="Form1">
+            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+            <input
+              id="search-doctor"
+              type="text"
+              name=""
+              placeholder="search for a doctor"
+            />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+        <div id="Doctorcards"></div>
+      </div>
 
-			<!-- Appointments Section showing an input field to book an appointment and appointments booked -->
+      <!-- Appointments Section showing an input field to book an appointment and appointments booked -->
 
-			<div class="appointments invisible">
-				<div id="appointmnent-form">
-					<!-- Form to be filled to book an appointment and submitted via submit event-->
-					<div class="form-field">
-						<input id="doctorname" type="text" placeholder="doctor" /><br />
-						<input id="appointment-date" type="text" placeholder="date" /><br />
-						<input id="appointment-time" type="text" placeholder="time" /><br />
-						<div id="btnBook">Submit</div>
-					</div>
-				</div>
+      <div class="appointments invisible">
+        <div id="appointmnent-form">
+          <!-- Form to be filled to book an appointment and submitted via submit event-->
+          <div class="form-field">
+            <input id="doctorname" type="text" placeholder="doctor" /><br />
+            <input id="appointment-date" type="text" placeholder="date" /><br />
+            <input id="appointment-time" type="text" placeholder="time" /><br />
+            <div id="btnBook">Submit</div>
+          </div>
+        </div>
 
-				<!-- Salutation field greeting the user -->
-				<div class="salutation">
-					Hello, Melvin Mbae. <br />
-					You have the following upcoming appointments:
-				</div>
+        <!-- Salutation field greeting the user -->
+        <div class="salutation">
+          Hello, Melvin Mbae. <br />
+          You have the following upcoming appointments:
+        </div>
 
-				<!-- List of appointments fetched from API or created using the POST Method -->
+        <!-- List of appointments fetched from API or created using the POST Method -->
 
-				<ul id="list-of-appointments"></ul>
-			</div>
-			<!-- HealthNuggets section accessed via the Health Nuggeths Button -->
-			<div class="healthNuggets invisible">
-				<div class="blog1">
-					<h2>Everything You Need to Know About Diabetes</h2>
-					<p>
-						Diabetes mellitus is a metabolic disease that causes high blood
-						sugar. Your body either does not make enough insulin or can not
-						effectively use the insulin it makes.
-					</p>
-					<h3>Types of diabetes</h3>
-					<p>There are a few different types of diabetes:</p>
-					<ul>
-						<li>
-							Type 1: Type 1 diabetes is an autoimmune disease. The immune
-							system attacks and destroys cells in the pancreas, where insulin
-							is made. It is unclear what causes this attack.
-						</li>
-						<li>
-							Type 2: Type 2 diabetes occurs when your body becomes resistant to
-							insulin, and sugar builds up in your blood. It is the most common
-							type—about 90% to 95%Trusted Source of people living with diabetes
-							have type 2.
-						</li>
-						<li>
-							Type 1.5: Type 1.5 diabetes is also known as latent autoimmune
-							diabetes in adults (LADA). It occurs during adulthood and sets in
-							gradually like type 2 diabetes. LADA is an autoimmune disease that
-							cannot be treated by diet or lifestyle.
-						</li>
-						<li>
-							Gestational: Gestational diabetes is high blood sugar during
-							pregnancy. Insulin-blocking hormones produced by the placenta
-							cause this type of diabetes.
-						</li>
-					</ul>
-					<p>
-						<a href="https://www.healthline.com/health/diabetes#symptoms"
-							>To read more on this Blog click here</a
-						>
-					</p>
-				</div>
-			</div>
-		</div>
-		<footer>
-			<p>&copy; 2023 HeyDoc! All rights reserved.</p>
-		</footer>
-	</body>
-	<script src="index.js"></script>
+        <ul id="list-of-appointments"></ul>
+      </div>
+      <!-- HealthNuggets section accessed via the Health Nuggeths Button -->
+      <div class="healthNuggets invisible">
+        <div class="blog1">
+          <h2>Everything You Need to Know About Diabetes</h2>
+          <p>
+            Diabetes mellitus is a metabolic disease that causes high blood
+            sugar. Your body either does not make enough insulin or can not
+            effectively use the insulin it makes.
+          </p>
+          <h3>Types of diabetes</h3>
+          <p>There are a few different types of diabetes:</p>
+          <ul>
+            <li>
+              Type 1: Type 1 diabetes is an autoimmune disease. The immune
+              system attacks and destroys cells in the pancreas, where insulin
+              is made. It is unclear what causes this attack.
+            </li>
+            <li>
+              Type 2: Type 2 diabetes occurs when your body becomes resistant to
+              insulin, and sugar builds up in your blood. It is the most common
+              type—about 90% to 95%Trusted Source of people living with diabetes
+              have type 2.
+            </li>
+            <li>
+              Type 1.5: Type 1.5 diabetes is also known as latent autoimmune
+              diabetes in adults (LADA). It occurs during adulthood and sets in
+              gradually like type 2 diabetes. LADA is an autoimmune disease that
+              cannot be treated by diet or lifestyle.
+            </li>
+            <li>
+              Gestational: Gestational diabetes is high blood sugar during
+              pregnancy. Insulin-blocking hormones produced by the placenta
+              cause this type of diabetes.
+            </li>
+          </ul>
+          <p>
+            <a href="https://www.healthline.com/health/diabetes#symptoms"
+              >To read more on this Blog click here</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2023 HeyDoc! All rights reserved.</p>
+    </footer>
+  </body>
+  <script src="index.js"></script>
 </html>
