@@ -1,19 +1,36 @@
 * {
-  margin: 0;
-  padding: 0;
-
-  background-color: #fff9ff;
-
   box-sizing: border-box;
 
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#MainImage {
-  height: 100%;
-  width: 100%;
+body {
+  margin: 0px;
+  
 }
 
+.homepage {
+  overflow-x: hidden;
+  display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.cover {
+  height: 50vh;
+  width: 100vw;
+
+  background-image: url("https://images.unsplash.com/photo-1611689102192-1f6e0e52df0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1533&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#doctors {
+      display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
 header {
   background-color: #fff9ff;
   color: black;
@@ -34,28 +51,25 @@ h1 {
 .mainbuttons {
   text-align: center;
 
-  padding-top: 20px;
-  padding-bottom: 20px;
-
   word-spacing: 100px;
 }
 
 .searchbar {
-  width: 100%;
-
-  padding-bottom: 20px;
+  width: 40vw;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  box-shadow: 4px 4px 30px pink;
+  margin: auto;
+
+  box-shadow: 4px 4px 30px #1e81b0;
 }
 
 .Form1 {
   background: white;
 
-  width: 600px;
+  width: 100%;
   height: 60px;
 
   display: flex;
@@ -73,7 +87,7 @@ h1 {
 .Form1 button {
   border-color: azure;
 
-  background: pink;
+  background: #1e81b0;
   color: white;
 
   outline: none;
@@ -90,7 +104,7 @@ h1 {
   position: absolute;
   flex: 1;
 
-  color: pink;
+  color: #1e81b0;
 
   padding: 0px;
 
@@ -102,50 +116,42 @@ h1 {
 #Doctorbutton,
 #Appointmentsbutton,
 #Healthnuggetsbutton {
-  font-weight: bold;
-  font-size: 15px;
-
-  background-color: pink;
-
-  width: 180px;
-
-  border-radius: 5px;
-
-  padding: 5px;
-
-  text-transform: uppercase;
-
-  cursor: pointer;
+    font-size: 15px;
+    background-color: #1e81b0;
+    width: 180px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: white;
+    border: none;
 }
 
 #Doctorcards {
-  height: auto;
-  width: auto;
-
   display: flex;
   flex-wrap: wrap;
-
-  margin-left: 60px;
+  column-gap: 15px;
+  row-gap: 10px;
+  justify-content: center;
 }
 
 #Doctorcards div {
-  border: 2px solid lightgray;
+  border: 1px solid lightgray;
+  border-radius: 16px;
+
   background-color: white;
 
-  margin-right: 20px;
-  margin-bottom: 20px;
-
-  flex: 1;
-  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
 #Doctorcards img {
-  height: 350px;
-  width: 450px;
+  width: 200px;
 
   background-color: white;
 
-  margin-right: 20px;
 }
 
 #Doctorcards p {
@@ -188,12 +194,10 @@ h1 {
   height: 150px;
 
   border: 2px solid;
-  border-color: pink;
+  border-color: #1e81b0;
   border-radius: 5px;
 
   color: maroon;
-
-  margin: 3px;
 }
 
 .form-field {
@@ -223,7 +227,7 @@ h1 {
 
   padding-left: 5px;
 
-  background-color: pink;
+  background-color: #1e81b0;
   color: maroon;
 
   border-radius: 5px;
@@ -231,22 +235,19 @@ h1 {
   font-size: 14px;
   font-weight: 600;
 
-  margin: 3px;
 }
 
 #delete-appointment,
 #edit-appointment {
-  margin-top: 30px;
   width: 120px;
 
   border: solid 2px black;
   border-radius: 5px;
 
-  background-color: pink;
+  background-color: #1e81b0;
 }
 
 #list-of-appointments h4 {
-  margin: 3px;
 
   font-size: larger;
 }
@@ -254,7 +255,6 @@ h1 {
 #list-of-appointments li {
   text-decoration: none;
 
-  margin-left: 5px;
 
   line-height: 25px;
 
@@ -266,11 +266,10 @@ h1 {
 .blog1 {
   padding: 50px;
   width: 80%;
-  margin: 60px;
 
   border: solid 2px;
   border-radius: 5px;
-  box-shadow: 5px 5px 5px pink;
+  box-shadow: 5px 5px 5px #1e81b0;
 
   justify-content: center;
 
