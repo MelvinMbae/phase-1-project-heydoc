@@ -9,6 +9,7 @@
 		<script
 			src="https://kit.fontawesome.com/640028239d.js"
 			crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	</head>
 	<body>
 		<header>
@@ -34,7 +35,7 @@
 			</p>
 			<!-- First Section Displaying the Search bar and Doctor Cards, -->
 			<div id="doctors">
-				<div class="searchbar" id = "search-bar-form">
+				<div class="searchbar" id="search-bar-form">
 					<form class="Form1">
 						<i class="fa-sharp fa-solid fa-magnifying-glass"></i>
 						<input
@@ -51,25 +52,25 @@
 			<!-- Appointments Section showing an input field to book an appointment and appointments booked -->
 
 			<div class="appointments invisible">
-				<form id="appointmnent-form">
+				<div id="appointmnent-form">
 					<!-- Form to be filled to book an appointment and submitted via submit event-->
 					<div class="form-field">
 						<input id="doctorname" type="text" placeholder="doctor" /><br />
 						<input id="appointment-date" type="text" placeholder="date" /><br />
 						<input id="appointment-time" type="text" placeholder="time" /><br />
-						<input type="submit" class="btn" value="Submit" />
+						<div id="btnBook">Submit</div>
 					</div>
-				</form>
+				</div>
+
 				<!-- Salutation field greeting the user -->
 				<div class="salutation">
-					Hello, Melvin Mbae.<br />
+					Hello, Melvin Mbae. <br />
 					You have the following upcoming appointments:
 				</div>
 
 				<!-- List of appointments fetched from API or created using the POST Method -->
 
 				<ul id="list-of-appointments"></ul>
-				
 			</div>
 			<!-- HealthNuggets section accessed via the Health Nuggeths Button -->
 			<div class="healthNuggets invisible">

@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Access the elements of our Html
     const doctorCards = document.getElementById("Doctorcards")
 
+    const map = {};
 
     // fetch our list of doctors from our server and display them in our app
 
@@ -16,11 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
             .then((doctorData) => {
 
                 doctorData.map((data) => {
-
+                    map[data.name] = true;
                     const cards = document.createElement("div");
                     cards.className = "doctor-profiles"
                     cards.innerHTML = `<img src="${data.image}"> <h4>${data.name}</h4> 
                     <p>${data.specialization}<br> Appointments: ${data.appointments}</p>`;
+
 
 
                     doctorCards.appendChild(cards)
@@ -34,6 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
     fetchDoctorDetails(`${baseUrl}/doctors`);
+
+    console.log(map);
 
 
     //search function to search for doctor by name or specialization
@@ -97,8 +101,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     const list = document.createElement("div");
                     list.innerHTML = ` <h4> Doctor: ${data.doctor}</h4>
                     <li> Date: ${data.date}<br> 
-                    Time: ${data.time}</li>`;
+                    Time: ${data.time}</li> <button id ="edit-appointment"type="button">Edit </button> <button id ="delete-appointment"type="button">Delete </button> `;
                     bookedAppointments.appendChild(list)
+
                 });
 
             });
@@ -108,8 +113,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Accessing the submit appointment button and submitting the form in the text field when booking appointment
 
-    document.getElementById('appointmnent-form').addEventListener('submit', function (e) {
-        e.preventDefault()
+    document.getElementById('btnBook').addEventListener('click', function (e) {
+        e.preventDefault();
 
         // fetch the values from the input fields and store them in a variable
         let newAppointment = document.getElementById("doctorname")
@@ -128,14 +133,22 @@ document.addEventListener("DOMContentLoaded", function () {
         // creating an object to be posted in JSON format to our server
 
         let newAppointmentData = {
-
             "doctor": doctorName,
             "patient": "Melvin Mbae",
             "date": appointmentDate,
             "time": appointmentTime
         }
 
-        postRequest(newAppointmentData)
+        if (map[doctorName]) {
+            postRequest(newAppointmentData)
+        } else {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Do you want to continue',
+                icon: 'error',
+                confirmButtonText: 'Cool'
+            })
+        }
     })
 
 
@@ -151,7 +164,14 @@ document.addEventListener("DOMContentLoaded", function () {
             body: JSON.stringify(newAppointmentData)
         })
             .then(res => res.json())
-            .then(appointment => console.log(appointment))
+            .then(_ => {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Appointment booked',
+                    icon: 'success',
+                    confirmButtonText: 'Okay'
+                })
+            })
     }
 
 
