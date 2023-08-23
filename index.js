@@ -157,26 +157,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const doctorButton = document.querySelector("#Doctorbutton");
 
   doctorButton.addEventListener("click", function () {
-    appointments.classList.add("invisible");
-    blogNews.classList.add("invisible");
-    myDoctors.classList.remove("invisible");
+    myDoctors.style.setProperty("display", "flex", "important")
+    appointments.style.setProperty("display", "none", "important")
+    blogNews.style.setProperty("display", "none", "important")
   });
 
   const appointments = document.querySelector(".appointments");
   const appointmentBtn = document.querySelector("#Appointmentsbutton");
 
   appointmentBtn.addEventListener("click", function () {
-    myDoctors.classList.add("invisible");
-    appointments.classList.remove("invisible");
-    blogNews.classList.add("invisible");
+    myDoctors.style.setProperty("display", "none", "important")
+    appointments.style.setProperty("display", "flex", "important")
+    blognews.style.setProperty("display", "none", "important")
   });
 
   const blogNews = document.querySelector(".healthNuggets");
   const Healthnuggetsbtn = document.querySelector("#Healthnuggetsbutton");
 
   Healthnuggetsbtn.addEventListener("click", function () {
-    myDoctors.classList.add("invisible");
-    appointments.classList.add("invisible");
-    blogNews.classList.remove("invisible");
+    myDoctors.style.setProperty("display", "none", "important")
+    appointments.style.setProperty("display", "none", "important")
+    blogNews.style.setProperty("display", "flex", "important")
   });
 });
