@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: 'Commissioner', sans-serif;
-font-family: 'Merriweather', serif;
+  font-family: 'Merriweather', serif;
 
 }
 
@@ -31,9 +31,10 @@ body {
   flex-direction: column;
   row-gap: 30px;
 }
+
 header {
   background-color: #fff9ff;
-  color: black;
+  color: maroon;
   text-align: center;
   padding: 10px;
 }
@@ -62,8 +63,8 @@ h1 {
   justify-content: center;
 
   margin: auto;
-      margin-top: 40px;
-    margin-bottom: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 
   border-radius: 10px;
 
@@ -194,23 +195,20 @@ h1 {
   border: none;
 }
 
-#list-of-appointments div {
-    text-decoration: none;
-    width: 300px;
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    color: maroon;
-    padding: 10px;
+#list-of-appointments {
 
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 
 }
 
 .form-field {
   width: 100%;
+
   padding: 10px;
+
   display: flex;
   flex-direction: column;
 }
@@ -225,29 +223,75 @@ h1 {
   border-color: lightgray;
 }
 
-.appointments {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
 .salutation {
   width: 100%;
+
   padding: 10px;
+
   background-color: #1e81b0;
   color: white;
+
   border-radius: 5px;
+
   font-size: 14px;
+
+
 }
+
+.appointments {
+
+  row-gap: 10px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.my-appointments {
+  border: 1px solid lightgray;
+  border-radius: 16px;
+
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  row-gap: 10px;
+
+
+}
+
+.my-appointments h4,
+li {
+  color: maroon;
+
+  border: none;
+
+}
+
+.edit-delete-btn {
+
+  display: flex;
+  flex-direction: row;
+
+  column-gap: 20px;
+
+
+}
+
 
 #delete-appointment,
 #edit-appointment {
-  font-size: 10px;
+  font-size: 12px;
+
   background-color: #1e81b0;
-  width: 180px;
-  height: 30px;
+
+  width: 160px;
+
   border-radius: 5px;
-  padding: 5px;
+  padding: 6px;
   text-transform: uppercase;
   cursor: pointer;
   color: white;
@@ -260,13 +304,7 @@ h1 {
   font-size: larger;
 }
 
-#list-of-appointments {
-  padding: 0;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+
 #list-of-appointments li {
   text-decoration: none;
 
@@ -277,41 +315,72 @@ h1 {
   list-style-type: none;
 }
 
-.blog1 {
-  padding: 50px;
-  width: 80%;
+.healthNuggets {
 
-  border: solid 2px;
-  border-radius: 5px;
-  box-shadow: 5px 5px 5px #1e81b0;
+  display: flex;
+  flex-wrap: wrap;
+
+  column-gap: 15px;
+  row-gap: 10px;
 
   justify-content: center;
 
-  align-items: center;
+  padding: 20px;
 
-  line-height: 25px;
 
+
+}
+
+.blog1 {
+
+  padding: 15px;
+  width: 500px;
+
+  border: solid 1px lightgray;
+  border-radius: 16px;
+
+  box-shadow: 5px 5px 5px #1e81b0;
+
+  display: flex;
+
+  justify-content: center;
+
+
+  flex-direction: column;
   color: maroon;
+
+
+
+
 }
 
 .blog1 h2 {
-  padding-bottom: 16px;
   width: 100%;
 }
 
 .blog1 h3 {
-  padding-bottom: 10px;
   width: 100%;
 }
 
 .blog1 p {
-  padding-bottom: 16px;
   width: 100%;
 }
 
 .blog1 ul {
-  padding-left: 50px;
   width: 100%;
+}
+
+.blog1 a {
+  background-color: #1e81b0;
+  color: white;
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+
 }
 
 .invisible {

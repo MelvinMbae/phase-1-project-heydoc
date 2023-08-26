@@ -14,11 +14,19 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((res) => res.json())
       .then((doctorData) => {
         doctorData.map((data) => {
+
+          // Check doctor name exists in the mapped data
           map[data.name] = true;
+
+          // DOM Render
           const cards = document.createElement("div");
           cards.className = "doctor-profiles";
-          cards.innerHTML = `<img src="${data.image}"> <h4>${data.name}</h4> 
-                    <p>${data.specialization}<br> Appointments: ${data.appointments}</p>`;
+          cards.innerHTML = `
+            <img src="${data.image}"> 
+            <h4>${data.name}</h4>          
+            <p>
+            ${data.specialization}<br> Appointments: ${data.appointments}
+            </p>`;
 
           doctorCards.appendChild(cards);
         });
@@ -63,8 +71,10 @@ document.addEventListener("DOMContentLoaded", function () {
           if (doctorsThatMatchSearch.includes(data.id)) {
             const cards = document.createElement("div");
             cards.className = "doctor-profiles";
-            cards.innerHTML = `<img src="${data.image}"> <h4>${data.name}</h4> 
-                        <p>${data.specialization}<br> Appointments: ${data.appointments}</p>`;
+            cards.innerHTML = `
+              <img src="${data.image}"> 
+              <h4>${data.name}</h4> 
+              <p>${data.specialization}<br> Appointments: ${data.appointments}</p>`;
 
             doctorCards.appendChild(cards);
           }
@@ -81,9 +91,16 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((appointmentsData) => {
         appointmentsData.map((data) => {
           const list = document.createElement("div");
-          list.innerHTML = ` <h4> Doctor: ${data.doctor}</h4>
-                    <li> Date: ${data.date}<br> 
-                    Time: ${data.time}</li> <button id ="edit-appointment"type="button">Edit </button> <button id ="delete-appointment"type="button">Delete </button> `;
+          list.className = "my-appointments"
+        
+          list.innerHTML = ` 
+            <h4> Doctor: ${data.doctor}</h4>
+            <li> Date: ${data.date}<br> 
+            Time: ${data.time}</li>
+            <div class = "edit-delete-btn">
+              <button id ="edit-appointment"type="button">Edit </button> 
+              <button id ="delete-appointment"type="button">Delete </button>
+            </div> `;
           bookedAppointments.appendChild(list);
         });
       });
@@ -151,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
-  // Manipulate our buttons with display none and display block since we are designing a single page application
+  // Manipulate our buttons with display none and display flex since we are designing a single page application
 
   const myDoctors = document.querySelector("#doctors");
   const doctorButton = document.querySelector("#Doctorbutton");

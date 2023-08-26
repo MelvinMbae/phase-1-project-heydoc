@@ -115,74 +115,18 @@
   ],
   "appointments": [
     {
-      "id": 6,
+      "id": 1,
       "doctor": "Trevour Kitavi",
       "patient": "Melvin Mbae",
-      "date": "10th August 2023",
+      "date": " August 2023",
       "time": "9:30 am - 10:30 am"
     },
     {
-      "id": 9,
+      "id": 2,
       "doctor": "Skylar Kendi",
       "patient": "Melvin Mbae",
-      "date": "14th August 2023",
+      "date": "30th September 2023",
       "time": "12:00 pm - 1:00pm"
-    },
-    {
-      "doctor": "Mark Mutugi",
-      "patient": "Melvin Mbae",
-      "date": "10th August 2023",
-      "time": "9:30 am - 10:30 am",
-      "id": 10
-    },
-    {
-      "doctor": "Patrick Mugo",
-      "patient": "Melvin Mbae",
-      "date": "15th August 2023",
-      "time": "9:30 am - 10:30 am",
-      "id": 11
-    },
-    {
-      "doctor": "Alvin Kiilu",
-      "patient": "Melvin Mbae",
-      "date": "20th September 2023",
-      "time": "11:30am - 1:00pm",
-      "id": 12
-    },
-    {
-      "doctor": "Chris Muga",
-      "patient": "Melvin Mbae",
-      "date": "20th September 2023",
-      "time": "11:30am - 1:00pm",
-      "id": 13
-    },
-    {
-      "doctor": "Chris Muga",
-      "patient": "Melvin Mbae",
-      "date": "20th September 2023",
-      "time": "9:30 am - 10:30 am",
-      "id": 14
-    },
-    {
-      "doctor": "Chris Muga",
-      "patient": "Melvin Mbae",
-      "date": "10th August 2023",
-      "time": "11:30am - 1:00pm",
-      "id": 15
-    },
-    {
-      "doctor": "Chris Muga",
-      "patient": "Melvin Mbae",
-      "date": "20th September 2023",
-      "time": "9:30 am - 10:30 am",
-      "id": 16
-    },
-    {
-      "doctor": "Chris Muga",
-      "patient": "Melvin Mbae",
-      "date": "20th September 2023",
-      "time": "9:30 am - 10:30 am",
-      "id": 17
     }
   ]
 }
