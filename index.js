@@ -74,18 +74,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Fetch processed appointment details to display on user end under the appointment page
+  function addAppointment(data) {
+    const list = document.createElement("div");
+    list.className = "my-appointments";
 
-  const bookedAppointments = document.getElementById("list-of-appointments");
-  function fetchAppointments(linkUrl) {
-    fetch(linkUrl)
-      .then((res) => res.json())
-      .then((appointmentsData) => {
-        appointmentsData.map((data) => {
-          const list = document.createElement("div");
-          list.className = "my-appointments";
-
-          list.innerHTML = ` 
+    list.innerHTML = ` 
             <h4> Doctor: ${data.doctor}</h4>
             <li> Date: ${data.date}<br> 
             Time: ${data.time}</li>
@@ -93,8 +86,16 @@ document.addEventListener("DOMContentLoaded", function () {
               <button id ="edit-appointment"type="button">Edit </button> 
               <button id ="delete-appointment"type="button">Delete </button>
             </div> `;
-          bookedAppointments.appendChild(list);
-        });
+    bookedAppointments.appendChild(list);
+  }
+
+  // Fetch processed appointment details to display on user end under the appointment page
+  const bookedAppointments = document.getElementById("list-of-appointments");
+  function fetchAppointments(linkUrl) {
+    fetch(linkUrl)
+      .then((res) => res.json())
+      .then((appointmentsData) => {
+        appointmentsData.map((data) => addAppointment(data));
       });
   }
   fetchAppointments(`${baseUrl}/appointments`);
@@ -147,7 +148,8 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify(newAppointmentData),
     })
       .then((res) => res.json())
-      .then((_) => {
+      .then((data) => {
+        addAppointment(data);
         Swal.fire({
           title: "Success!",
           text: "Appointment booked",
