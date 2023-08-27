@@ -77,10 +77,21 @@ document.addEventListener("DOMContentLoaded", function () {
   function addAppointment(data) {
     const list = document.createElement("div");
     list.className = "my-appointments";
+    let options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+
+    const date = new Date(data.date);
+    const appointmentDate = new Intl.DateTimeFormat("en-US", options).format(
+      date,
+    );
 
     list.innerHTML = ` 
             <h4> Doctor: ${data.doctor}</h4>
-            <li> Date: ${data.date}<br> 
+            <li> Date: ${appointmentDate}<br> 
             Time: ${data.time}</li>
             <div class = "edit-delete-btn">
               <button id ="edit-appointment"type="button">Edit </button> 
@@ -152,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         addAppointment(data);
         Swal.fire({
           title: "Success!",
-          text: "Appointment booked",
+          text: `Appointment booked with ${data.doctor}`,
           icon: "success",
           confirmButtonText: "Okay",
         });
