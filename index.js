@@ -169,8 +169,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Manipulate our buttons with display none and display flex since we are designing a single page application
-
   const myDoctors = document.querySelector("#doctors");
+  const appointments = document.querySelector(".appointments");
+  const blogNews = document.querySelector(".healthNuggets");
+
   const doctorButton = document.querySelector("#Doctorbutton");
 
   doctorButton.addEventListener("click", function () {
@@ -179,16 +181,14 @@ document.addEventListener("DOMContentLoaded", function () {
     blogNews.style.setProperty("display", "none", "important")
   });
 
-  const appointments = document.querySelector(".appointments");
   const appointmentBtn = document.querySelector("#Appointmentsbutton");
 
   appointmentBtn.addEventListener("click", function () {
     myDoctors.style.setProperty("display", "none", "important")
     appointments.style.setProperty("display", "flex", "important")
-    blognews.style.setProperty("display", "none", "important")
+    blogNews.style.setProperty("display", "none", "important")
   });
 
-  const blogNews = document.querySelector(".healthNuggets");
   const Healthnuggetsbtn = document.querySelector("#Healthnuggetsbutton");
 
   Healthnuggetsbtn.addEventListener("click", function () {
@@ -196,4 +196,9 @@ document.addEventListener("DOMContentLoaded", function () {
     appointments.style.setProperty("display", "none", "important")
     blogNews.style.setProperty("display", "flex", "important")
   });
+
+  // Default Action
+    myDoctors.style.setProperty("display", "flex", "important")
+    appointments.style.setProperty("display", "none", "important")
+    blogNews.style.setProperty("display", "none", "important")
 });

@@ -245,7 +245,6 @@ h1 {
 
   display: flex;
   flex-direction: column;
-
 }
 
 .my-appointments {
@@ -326,6 +325,8 @@ li {
   justify-content: center;
 
   padding: 20px;
+
+  transition: all fade 1s;
 
 
 
