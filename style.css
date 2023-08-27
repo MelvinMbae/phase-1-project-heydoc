@@ -25,17 +25,31 @@ body {
   background-size: cover;
 }
 
+.container {
+  display: flex;
+}
+
+.mainbuttons {
+  text-align: center;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 10px;
+  height: 70vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  padding: 20px;
+  width: 75vw;
+}
+
 #doctors {
   display: flex;
   flex-direction: column;
   row-gap: 30px;
-}
-
-header {
-  background-color: #fff9ff;
-  color: maroon;
-  text-align: center;
-  padding: 10px;
 }
 
 footer {
@@ -46,12 +60,6 @@ footer {
 
 h1 {
   background-color: #fff9ff;
-}
-
-.mainbuttons {
-  text-align: center;
-
-  word-spacing: 100px;
 }
 
 .searchbar {
