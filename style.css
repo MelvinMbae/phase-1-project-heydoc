@@ -27,11 +27,12 @@ body {
 
 .container {
   display: flex;
+  padding: 20px;
 }
 
 .mainbuttons {
   text-align: center;
-  width: 25vw;
+  width: 15vw;
   display: flex;
   flex-direction: column;
   row-gap: 10px;
@@ -43,7 +44,11 @@ body {
 
 .main-content {
   padding: 20px;
-  width: 75vw;
+    width: 85vw;
+    display: flex;
+    justify-content: center;
+    border: solid 1px lightgrey;
+    border-radius: 20px;
 }
 
 #doctors {
