@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const searchInput = document.getElementById("search-doctor");
   searchInput.addEventListener("input", (e) => {
-    // console.log("Search form submitted");
     e.preventDefault();
     let searchedWord = searchInput.value;
     if (searchedWord) {
@@ -59,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
         doctorsThatMatchSearch.push(doc.id);
       }
 
-      // console.log(doctorsThatMatchSearch);
       doctorCards.replaceChildren();
       cachedDoctors.map((data) => {
         if (doctorsThatMatchSearch.includes(data.id)) {
@@ -109,15 +107,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // fetch the values from the input fields and store them in a variable
     let newAppointment = document.getElementById("doctorname");
     let doctorName = newAppointment.value;
-    console.log(doctorName);
 
     let newAppointmentDate = document.getElementById("appointment-date");
     let appointmentDate = newAppointmentDate.value;
-    console.log(appointmentDate);
 
     let newAppointmentTime = document.getElementById("appointment-time");
     let appointmentTime = newAppointmentTime.value;
-    console.log(appointmentTime);
 
     // creating an object to be posted in JSON format to our server
 
