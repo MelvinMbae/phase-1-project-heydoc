@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((res) => res.json())
       .then((doctorData) => {
         doctorData.map((data) => {
-
           // Check doctor name exists in the mapped data
           map[data.name] = true;
 
@@ -91,8 +90,8 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((appointmentsData) => {
         appointmentsData.map((data) => {
           const list = document.createElement("div");
-          list.className = "my-appointments"
-        
+          list.className = "my-appointments";
+
           list.innerHTML = ` 
             <h4> Doctor: ${data.doctor}</h4>
             <li> Date: ${data.date}<br> 
@@ -176,29 +175,29 @@ document.addEventListener("DOMContentLoaded", function () {
   const doctorButton = document.querySelector("#Doctorbutton");
 
   doctorButton.addEventListener("click", function () {
-    myDoctors.style.setProperty("display", "flex", "important")
-    appointments.style.setProperty("display", "none", "important")
-    blogNews.style.setProperty("display", "none", "important")
+    myDoctors.style.setProperty("display", "flex", "important");
+    appointments.style.setProperty("display", "none", "important");
+    blogNews.style.setProperty("display", "none", "important");
   });
 
   const appointmentBtn = document.querySelector("#Appointmentsbutton");
 
   appointmentBtn.addEventListener("click", function () {
-    myDoctors.style.setProperty("display", "none", "important")
-    appointments.style.setProperty("display", "flex", "important")
-    blogNews.style.setProperty("display", "none", "important")
+    myDoctors.style.setProperty("display", "none", "important");
+    appointments.style.setProperty("display", "flex", "important");
+    blogNews.style.setProperty("display", "none", "important");
   });
 
   const Healthnuggetsbtn = document.querySelector("#Healthnuggetsbutton");
 
   Healthnuggetsbtn.addEventListener("click", function () {
-    myDoctors.style.setProperty("display", "none", "important")
-    appointments.style.setProperty("display", "none", "important")
-    blogNews.style.setProperty("display", "flex", "important")
+    myDoctors.style.setProperty("display", "none", "important");
+    appointments.style.setProperty("display", "none", "important");
+    blogNews.style.setProperty("display", "flex", "important");
   });
 
   // Default Action
-    myDoctors.style.setProperty("display", "flex", "important")
-    appointments.style.setProperty("display", "none", "important")
-    blogNews.style.setProperty("display", "none", "important")
+  myDoctors.style.setProperty("display", "flex", "important");
+  appointments.style.setProperty("display", "none", "important");
+  blogNews.style.setProperty("display", "none", "important");
 });

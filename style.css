@@ -1,8 +1,7 @@
 * {
   box-sizing: border-box;
-  font-family: 'Commissioner', sans-serif;
-  font-family: 'Merriweather', serif;
-
+  font-family: "Commissioner", sans-serif;
+  font-family: "Merriweather", serif;
 }
 
 body {
@@ -107,6 +106,23 @@ h1 {
   border: none;
 }
 
+#btnBook {
+  background: lightgrey;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px;
+  color: white;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+
+  transition: all 1s;
+}
+
+#btnBook:hover {
+  background: #1e81b0;
+}
+
 .fa-magnifying-glass {
   align-self: center;
 
@@ -195,37 +211,46 @@ h1 {
   border: none;
 }
 
-#list-of-appointments {
-
+.appointments > #appointment-form {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+  flex-direction: column;
 
+  row-gap: 10px;
+}
+
+#list-of-appointments {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  justify-content: center;
 }
 
 .form-field {
-  width: 100%;
-
-  padding: 10px;
-
   display: flex;
   flex-direction: column;
+  row-gap: 10px;
 }
 
 .form-field input {
+  width: 30vw;
+
+  padding: 8px;
+
+  border: solid 1px lightgray;
+  outline: none;
+
   height: 30px;
-  width: 100%;
+  border-radius: 5px;
 
-  padding: 3px;
+  transition: all 1s;
+}
 
-  border: solid 1px;
-  border-color: lightgray;
+.form-field input:focus {
+  border: solid 1px #1e81b0;
+  font-size: 15px;
 }
 
 .salutation {
-  width: 100%;
-
   padding: 10px;
 
   background-color: #1e81b0;
@@ -235,16 +260,18 @@ h1 {
 
   font-size: 14px;
 
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .appointments {
-
-  row-gap: 10px;
+  column-gap: 10px;
   padding: 20px;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .my-appointments {
@@ -258,8 +285,6 @@ h1 {
   padding: 20px;
 
   row-gap: 10px;
-
-
 }
 
 .my-appointments h4,
@@ -267,19 +292,14 @@ li {
   color: maroon;
 
   border: none;
-
 }
 
 .edit-delete-btn {
-
   display: flex;
   flex-direction: row;
 
   column-gap: 20px;
-
-
 }
-
 
 #delete-appointment,
 #edit-appointment {
@@ -303,7 +323,6 @@ li {
   font-size: larger;
 }
 
-
 #list-of-appointments li {
   text-decoration: none;
 
@@ -315,7 +334,6 @@ li {
 }
 
 .healthNuggets {
-
   display: flex;
   flex-wrap: wrap;
 
@@ -327,13 +345,9 @@ li {
   padding: 20px;
 
   transition: all fade 1s;
-
-
-
 }
 
 .blog1 {
-
   padding: 15px;
   width: 500px;
 
@@ -346,13 +360,8 @@ li {
 
   justify-content: center;
 
-
   flex-direction: column;
   color: maroon;
-
-
-
-
 }
 
 .blog1 h2 {
@@ -380,8 +389,6 @@ li {
   border-radius: 10px;
 
   cursor: pointer;
-
-
 }
 
 .invisible {
