@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const doctorCards = document.getElementById("Doctorcards");
 
   const map = {};
+  const appointmentsMap = {};
   const cachedDoctors = [];
 
   function addSearchDoctors(doc) {
@@ -62,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function addAppointment(data) {
     const list = document.createElement("div");
+    list.id = `appointment-${data.id}`;
     list.className = "my-appointments";
     let options = {
       weekday: "long",
@@ -75,15 +77,26 @@ document.addEventListener("DOMContentLoaded", function () {
       date,
     );
 
+    const id = `delete-${data.id}`;
+
     list.innerHTML = ` 
             <h4> Doctor: ${data.doctor}</h4>
             <li> Date: ${appointmentDate}<br> 
             Time: ${data.time}</li>
             <div class = "edit-delete-btn">
               <button id ="edit-appointment"type="button">Edit </button> 
-              <button id ="delete-appointment"type="button">Delete </button>
-            </div> `;
+              <button id =${id} class="delete-btn" type="button">Delete </button>
+            </div> 
+      `;
+
     bookedAppointments.appendChild(list);
+
+    const btn = document.getElementById(id);
+
+    btn.addEventListener("click", () => {
+      const appointmentId = id.split("-")[1];
+      deleteRequest(appointmentId);
+    });
   }
 
   // Fetch processed appointment details to display on user end under the appointment page
@@ -92,7 +105,10 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(linkUrl)
       .then((res) => res.json())
       .then((appointmentsData) => {
-        appointmentsData.map((data) => addAppointment(data));
+        appointmentsData.map((data) => {
+          appointmentsMap[data.id] = data;
+          addAppointment(data);
+        });
       });
   }
   fetchAppointments(`${baseUrl}/appointments`);
@@ -150,6 +166,35 @@ document.addEventListener("DOMContentLoaded", function () {
         Swal.fire({
           title: "Success!",
           text: `Appointment booked with ${data.doctor}`,
+          icon: "success",
+          confirmButtonText: "Okay",
+        });
+      });
+  }
+
+  function removeAppointment(id) {
+    const appointmentCard = document.getElementById(id);
+    console.log({ appointmentCard });
+
+    appointmentCard.remove();
+  }
+  // Delete Request
+
+  function deleteRequest(id) {
+    fetch(`${baseUrl}/appointments/${id}`, {
+      // Specify the HTTP method
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log({ data });
+        removeAppointment(`appointment-${id}`);
+        Swal.fire({
+          title: "Success!",
+          text: `Appointment with ${appointmentsMap[id].doctor} deleted`,
           icon: "success",
           confirmButtonText: "Okay",
         });

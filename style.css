@@ -249,9 +249,9 @@ h1 {
 
 #list-of-appointments {
   display: flex;
-  flex-direction: column;
   row-gap: 10px;
-  justify-content: center;
+  justify-content: flex-end;
+  flex-direction: column-reverse;
 }
 
 .form-field {
@@ -330,7 +330,7 @@ li {
   column-gap: 20px;
 }
 
-#delete-appointment,
+.delete-btn,
 #edit-appointment {
   font-size: 12px;
 
