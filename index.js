@@ -42,11 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
     let searchedWord = searchInput.value;
     if (searchedWord) {
-      displaySearchedDoctor(`${baseUrl}/doctors`, searchedWord);
+      displaySearchedDoctor(searchedWord);
     }
   });
 
-  function displaySearchedDoctor(linkUrl, searchWord) {
+  function displaySearchedDoctor(searchWord) {
     let doctorsThatMatchSearch = [];
     let modifiedsearchWord = searchWord.toLowerCase();
 
