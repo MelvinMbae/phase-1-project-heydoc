@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const doctorCards = document.getElementById("Doctorcards");
 
   const map = {};
+  const cachedDoctors = [];
 
   // fetch our list of doctors from our server and display them in our app
 
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         doctorData.map((data) => {
           // Check doctor name exists in the mapped data
           map[data.name] = true;
+          cachedDoctors.push(data);
 
           // DOM Render
           const cards = document.createElement("div");
@@ -30,55 +32,48 @@ document.addEventListener("DOMContentLoaded", function () {
           doctorCards.appendChild(cards);
         });
       });
-    console.log("connection made");
   }
   fetchDoctorDetails(`${baseUrl}/doctors`);
 
-  console.log(map);
-
   //search function to search for doctor by name or specialization
 
-  document.getElementById("search-bar-form").addEventListener("submit", (e) => {
+  const searchInput = document.getElementById("search-doctor");
+  searchInput.addEventListener("input", (e) => {
     // console.log("Search form submitted");
     e.preventDefault();
-    let searchedWord = document.getElementById("search-doctor").value;
-    console.log(`Searched word: ${searchedWord}`);
+    let searchedWord = searchInput.value;
     if (searchedWord) {
       displaySearchedDoctor(`${baseUrl}/doctors`, searchedWord);
     }
   });
 
   function displaySearchedDoctor(linkUrl, searchWord) {
-    fetch(linkUrl)
-      .then((res) => res.json())
-      .then((doctorData) => {
-        let doctorsThatMatchSearch = [];
-        let modifiedsearchWord = searchWord.toLowerCase();
+    let doctorsThatMatchSearch = [];
+    let modifiedsearchWord = searchWord.toLowerCase();
 
-        doctorData.forEach((doc) => {
-          if (
-            doc.name.toLowerCase().includes(modifiedsearchWord) ||
-            doc.specialization.toLowerCase().includes(modifiedsearchWord)
-          ) {
-            doctorsThatMatchSearch.push(doc.id);
-          }
-        });
+    cachedDoctors.forEach((doc) => {
+      if (
+        doc.name.toLowerCase().includes(modifiedsearchWord) ||
+        doc.specialization.toLowerCase().includes(modifiedsearchWord)
+      ) {
+        doctorsThatMatchSearch.push(doc.id);
+      }
 
-        // console.log(doctorsThatMatchSearch);
-        doctorCards.replaceChildren();
-        doctorData.map((data) => {
-          if (doctorsThatMatchSearch.includes(data.id)) {
-            const cards = document.createElement("div");
-            cards.className = "doctor-profiles";
-            cards.innerHTML = `
+      // console.log(doctorsThatMatchSearch);
+      doctorCards.replaceChildren();
+      cachedDoctors.map((data) => {
+        if (doctorsThatMatchSearch.includes(data.id)) {
+          const cards = document.createElement("div");
+          cards.className = "doctor-profiles";
+          cards.innerHTML = `
               <img src="${data.image}"> 
               <h4>${data.name}</h4> 
               <p>${data.specialization}<br> Appointments: ${data.appointments}</p>`;
 
-            doctorCards.appendChild(cards);
-          }
-        });
+          doctorCards.appendChild(cards);
+        }
       });
+    });
   }
 
   // Fetch processed appointment details to display on user end under the appointment page
