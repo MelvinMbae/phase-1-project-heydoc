@@ -8,6 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const map = {};
   const cachedDoctors = [];
 
+  function addSearchDoctors(doc) {
+    const card = document.createElement("div");
+    card.className = "doctor-profiles";
+    card.innerHTML = `
+              <img src="${doc.image}"> 
+              <h4>${doc.name}</h4> 
+              <p>${doc.specialization}<br> Appointments: ${doc.appointments}</p>`;
+
+    doctorCards.appendChild(card);
+  }
+
   // fetch our list of doctors from our server and display them in our app
 
   function fetchDoctorDetails(linkUrl) {
@@ -19,17 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
           map[data.name] = true;
           cachedDoctors.push(data);
 
-          // DOM Render
-          const cards = document.createElement("div");
-          cards.className = "doctor-profiles";
-          cards.innerHTML = `
-            <img src="${data.image}"> 
-            <h4>${data.name}</h4>          
-            <p>
-            ${data.specialization}<br> Appointments: ${data.appointments}
-            </p>`;
-
-          doctorCards.appendChild(cards);
+          addSearchDoctors(data);
         });
       });
   }
@@ -41,36 +42,21 @@ document.addEventListener("DOMContentLoaded", function () {
   searchInput.addEventListener("input", (e) => {
     e.preventDefault();
     let searchedWord = searchInput.value;
-    if (searchedWord) {
-      displaySearchedDoctor(searchedWord);
-    }
+    displaySearchedDoctor(searchedWord);
   });
 
   function displaySearchedDoctor(searchWord) {
-    let doctorsThatMatchSearch = [];
-    let modifiedsearchWord = searchWord.toLowerCase();
+    let modifiedSearchWord = searchWord.toLowerCase();
+
+    doctorCards.replaceChildren();
 
     cachedDoctors.forEach((doc) => {
-      if (
-        doc.name.toLowerCase().includes(modifiedsearchWord) ||
-        doc.specialization.toLowerCase().includes(modifiedsearchWord)
-      ) {
-        doctorsThatMatchSearch.push(doc.id);
+      const matchFound =
+        doc.specialization.toLowerCase().includes(modifiedSearchWord) ||
+        doc.name.toLowerCase().includes(modifiedSearchWord);
+      if (matchFound) {
+        addSearchDoctors(doc);
       }
-
-      doctorCards.replaceChildren();
-      cachedDoctors.map((data) => {
-        if (doctorsThatMatchSearch.includes(data.id)) {
-          const cards = document.createElement("div");
-          cards.className = "doctor-profiles";
-          cards.innerHTML = `
-              <img src="${data.image}"> 
-              <h4>${data.name}</h4> 
-              <p>${data.specialization}<br> Appointments: ${data.appointments}</p>`;
-
-          doctorCards.appendChild(cards);
-        }
-      });
     });
   }
 

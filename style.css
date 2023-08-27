@@ -25,6 +25,19 @@ body {
   background-size: cover;
 }
 
+.cover > .title {
+  width: 400px;
+  position: absolute;
+  right: 30px;
+  top: 16%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 8px;
+}
+.cover > .title > .heading {
+  font-size: 4em;
+}
+
 .container {
   display: flex;
   padding: 20px;
@@ -44,11 +57,11 @@ body {
 
 .main-content {
   padding: 20px;
-    width: 85vw;
-    display: flex;
-    justify-content: center;
-    border: solid 1px lightgrey;
-    border-radius: 20px;
+  width: 85vw;
+  display: flex;
+  justify-content: center;
+  border: solid 1px lightgrey;
+  border-radius: 20px;
 }
 
 #doctors {
@@ -104,6 +117,7 @@ h1 {
   border: none;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  font-weight: 600;
 }
 
 .Form1 i {
@@ -117,6 +131,8 @@ h1 {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border: none;
+  width: 90px;
+  font-weight: 600;
 }
 
 #btnBook {
